@@ -1,0 +1,114 @@
+body {
+  margin: 0;
+  background-color: #edf2f4;
+}
+
+nav {
+  position: fixed;
+  height: 100vh;
+  width: 15vw;
+  background-color: #2b2d42;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: #edf2f4;
+}
+
+.navItem {
+  margin: 10px;
+}
+
+.noteNav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.noteNav p {
+  margin: 5px;
+  padding: 0px;
+}
+
+.noteList {
+  border-top: 1px solid #8d99ae;
+  width: 14vw;
+}
+
+i {
+  color: #8d99ae;
+  margin: 2px;
+}
+
+i:hover {
+  color: #edf2f4;
+  cursor: pointer;
+}
+
+.fa-window-close {
+  margin: 10px;
+  align-self: flex-end;
+}
+.fa-trash,
+.fa-window-close {
+  color: #d90429;
+}
+.fa-trash:hover,
+.fa-window-close:hover {
+  color: #ef233c;
+}
+.fa-check {
+  color: #008000;
+}
+.fa-check:hover {
+  color: #06d606;
+}
+.modal {
+  position: fixed;
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+form {
+  background-color: #edf2f4;
+  border-radius: 5px;
+  width: 50vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+}
+form div {
+  margin: 5px;
+}
+
+form button {
+  align-self: flex-end;
+  border: none;
+  background: none;
+  outline: none;
+  margin: 10px;
+}
+input {
+  background-color: none;
+  border: none;
+  outline: none;
+}
+
+textarea {
+  width: 45vw;
+  min-height: 25vh;
+  border: none;
+  outline: none;
+}
+
+@media (max-width: 900px) {
+  nav {
+    height: fit-content;
+    width: 100vw;
+    flex-direction: row;
+    justify-content: flex-end;
+  }
+}
