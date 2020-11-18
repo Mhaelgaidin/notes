@@ -17,7 +17,12 @@ const Note = ({ note, index, delNote, openModal }) => {
           <i className='fas fa-trash fa-sm' onClick={handleDelete}></i>
         </div>
       </div>
-      <p>{note.body}</p>
+      {/* Must sanitise markdown input to prevent XSS*/}
+      <p
+        dangerouslySetInnerHTML={{
+          __html: note.body,
+        }}
+      ></p>
       <p>
         <span>Created: {note.date}</span>
         {note.editedDate && <span> Edited: {note.editedDate}</span>}

@@ -1,8 +1,12 @@
 import React, { useState } from 'react'
+import marked from 'marked'
+import DOMPurify from 'dompurify'
+import TurndownService from 'turndown'
 
 const EditModal = ({ close, updateNotes, editNote }) => {
+  const turndownService = new TurndownService()
   const [title, setTitle] = useState(editNote.title)
-  const [body, setBody] = useState(editNote.body)
+  const [body, setBody] = useState(turndownService.turndown(editNote.body))
   const bodyChange = (event) => {
     setBody(event.target.value)
   }
@@ -13,12 +17,13 @@ const EditModal = ({ close, updateNotes, editNote }) => {
     e.preventDefault()
     updateNotes({
       title: title,
-      body: body,
+      body: DOMPurify.sanitize(marked(body)),
       date: JSON.stringify(new Date()).substring(1, 11),
       index: editNote.index,
     })
     close()
   }
+
   return (
     <div className='modal'>
       <form onSubmit={submitHandler} autoComplete='off'>
