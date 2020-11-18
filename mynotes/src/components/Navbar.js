@@ -1,16 +1,11 @@
-import NoteNav from './NoteNav'
-
-const Navbar = ({ notes, delNote, openModal }) => {
+const Navbar = ({ openModal }) => {
   return (
     <nav>
-      <div className='navItem'>
-        <i className='fas fa-plus' onClick={openModal}></i>
-      </div>
-      <div className='noteList'>
-        {notes.map((note, index) => (
-          <NoteNav note={note} key={index} delNote={delNote} index={index} />
-        ))}
-      </div>
+      <h1>MyNote</h1>
+      <button className='navItem' onClick={openModal}>
+        <span>New Note </span>
+        <i className='fas fa-feather-alt'></i>
+      </button>
     </nav>
   )
 }
