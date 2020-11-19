@@ -6,7 +6,9 @@ import TurndownService from 'turndown'
 const EditModal = ({ close, updateNotes, editNote }) => {
   const turndownService = new TurndownService()
   const [title, setTitle] = useState(editNote.title)
-  const [body, setBody] = useState(turndownService.turndown(editNote.body))
+  const [body, setBody] = useState(
+    !editNote.body ? '' : turndownService.turndown(editNote.body)
+  )
   const bodyChange = (event) => {
     setBody(event.target.value)
   }

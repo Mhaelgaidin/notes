@@ -54,14 +54,21 @@ nav {
   cursor: pointer;
 }
 i {
+  display: inline-block;
+  border-radius: 2px;
+  min-width: 10px;
+  min-height: 10px;
   margin: 5px;
 }
 i:hover {
   cursor: pointer;
 }
-
+.fa-pen {
+  color: #fff;
+  background-color: #2b2d42;
+}
 .fa-pen:hover {
-  color: #8d99ae;
+  background-color: #8d99ae;
 }
 .fa-window-close {
   margin: 10px;
@@ -69,17 +76,19 @@ i:hover {
 }
 .fa-trash,
 .fa-window-close {
-  color: #d90429;
+  color: #fff;
+  background-color: #d90429;
 }
 .fa-trash:hover,
 .fa-window-close:hover {
-  color: #ef233c;
+  background-color: #ef233c;
 }
 .fa-check {
-  color: #008000;
+  color: white;
+  background-color: #008000;
 }
 .fa-check:hover {
-  color: #06d606;
+  background-color: #06d606;
 }
 .modal {
   position: fixed;
